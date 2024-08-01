@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/BBDD_Tema3/BD-T03_Model_Relacional/44_relacions_11/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>4.4 Relacions 1:1 - BD - Bases de Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "4.4 Relacions 1:1";
+        var mkdocs_page_input_path = "BD-T03_Model_Relacional/44_relacions_11.md";
+        var mkdocs_page_url = "/BBDD_Tema3/BD-T03_Model_Relacional/44_relacions_11/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 3 Model Relacional</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius_i_coneixements_previs/">Objectius i coneixements previs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2_estructura_del_model_relacional/">2. Estructura del Model Relacional</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >3. Restriccions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../3_restriccions/">3. Restriccions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../31_restriccions_inherents/">3.1 Restriccions inherents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >3.2 Restriccions d'usuari</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../32_restriccions_dusuari/">3.2 Restriccions d'usuari</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../321_restricci_de_domini/">3.2.1 Restricció de domini</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../322_restricci_de_clau_principal/">3.2.2 Restricció de clau principal</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../323_restricci_dunicitat/">3.2.3 Restricció d'unicitat</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../324_restricci_de_valor_no_nul/">3.2.4 Restricció de valor no nul</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../325_integritat_referencial/">3.2.5 Integritat referencial</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../326_restriccions_externes/">3.2.6 Restriccions externes</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >4. Tranformació del M. E/R al M. Relacional</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../4_tranformaci_del_m_er_al_m_relacional/">4. Tranformació del M. E/R al M. Relacional</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../41_entitats/">4.1 Entitats</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../42_relacions_1n/">4.2 Relacions 1:N</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../43_relacions_mn/">4.3 Relacions M:N</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">4.4 Relacions 1:1</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../45_entitats_dbils/">4.5 Entitats dèbils</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../46_resum_dependncies/">4.6 Resum dependències</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../47_relacions_ternries/">4.7 Relacions ternàries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../48_especialitzacions/">4.8 Especialitzacions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../49_restriccions_externes/">4.9 Restriccions externes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../410_exemple/">4.10 Exemple</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_llenguatges_relacionals/">5. Llenguatges relacionals</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_exercicis/">6. Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">BD - Bases de Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 3 Model Relacional</li>
+          <li class="breadcrumb-item">4. Tranformació del M. E/R al M. Relacional</li>
+      <li class="breadcrumb-item active">4.4 Relacions 1:1</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="44-relacions-11">4.4 Relacions 1:1</h1>
+<p>No hi ha una forma única de traduir aquestes relacions. Tres seran les
+possibles traduccions, segons la participació total o parcial de les entitats
+en la relació, i també segons el que ens diga el "<em>sentit comú</em> ".</p>
+<ul>
+<li>Si de les dues entitats que entren la relació, <strong>A</strong> i <strong>B</strong> ,<strong><em>* una d'elles i només una, participa de forma total, per exemple </em>*B</strong> , traduirem la relació 1:1 com una <strong>clau externa</strong> en la taula corresponent a l'entitat que participa de forma total (<strong>B</strong>). Podem obligar també a que aquest camp que serà clau externa siga <strong>no nul</strong> (ja que totes les ocurrències de <strong>B</strong> entren en la relació). També podem fer que aquest camp siga <strong>únic</strong> (no es podrà repetir, ja que si es puguera repetir seria una relació 1:N). A més, inclourem en<strong>B</strong> tots els possibles atributs de la relació. </li>
+</ul>
+<blockquote>
+<p>Per exemple, la relació <strong><em>dirigeix</em></strong> , que és 1:1 entre <strong>EMPLEAT</strong> i
+<strong>DEPARTAMENT</strong> :</p>
+<p><img alt="" src="../T3_4_4_1.png" /><br />
+</p>
+<p>Com que l'entitat de la dreta participa de forma total, triarem
+<strong>DEPARTAMENT</strong> :</p>
+<p><img alt="" src="../T3_4_4_2.png" /><br />
+</p>
+<p>Ho fem d'aquesta manera perquè tots els departaments tenen director, però no
+tots els empleats són directors. Si posàrem la clau externa en la taula
+<strong>EMPLEAT</strong>(s'anomenaria per exemple <strong>dep_que_dirigeix</strong>) moltes vegades
+estaria buit, ja que relativament són pocs els empleats que dirigeixen un
+departament.</p>
+<p>Vegem un altre exemple de relació 1:1, el de les papallones. Teníem una
+relació 1:1 entre <strong>PERSONA</strong> i<strong>COL·LECCIÓ</strong></p>
+<p><img alt="" src="../T3_4_4_3.png" /><br />
+</p>
+<p>Triaríem <strong>COL·LECCIÓ</strong> , ja que entra de forma plena o total en la relació.</p>
+<p><img alt="" src="../T3_4_4_4.png" /><br />
+</p>
+</blockquote>
+<ul>
+<li>Si les dues entitats participen de forma total, es pot considerar tot (les dues entitats i la relació, amb els seus possibles atributs) com una sola taula. En la pràctica això serà prou estrany, perquè ja ho hauríem considerat una sola entitat. Per exemple, considerem que totes les persones que estudiem tenen una col·lecció: </li>
+</ul>
+<blockquote>
+<p><img alt="" src="../T3_4_4_5.png" /><br />
+</p>
+<p>Aleshores podríem considerar una única taula, que continga les dades de la
+persona i de la seua col·lecció:</p>
+<p><img alt="" src="../T3_4_4_6.png" /><br />
+</p>
+<p>De tota manera, pot ser ens interesse (per separar clarament els dos tipus
+d'informació) dues taules. Aleshores podríem traduir-lo com en el primer
+punt, amb una clau externa (no nula) en una de les dues taules, i hauríem de
+triar la taula que <em>menys</em> s'utilitze.</p>
+</blockquote>
+<ul>
+<li>Si les dues entitats participen de forma parcial, com que si posem una clau externa en una de les dues, moltes vegades tindrà valor nul, podem traduir-la com una nova taula que marque la relació, on hi haurà una tupla per cada relació entre dues ocurrències. Inclouríem en la nova taula els possibles atributs de la relació. </li>
+</ul>
+<blockquote>
+<p>En l'exemple podria ser que les col·leccions pertanyen a una persona
+particular o a una institució (no tenen propietari):</p>
+<p><img alt="" src="../T3_4_4_7.png" /></p>
+<p>Quedaria:</p>
+<p><img alt="" src="../T3_4_4_8.png" /></p>
+<p>Però com comentàvem al principi, haurem d'aplicar el sentit comú, ja que
+potser una de les dues podria participar de forma "quasi" total (per
+exemple, quasi totes les col·leccions són d'una persona). Aleshores podria
+ser millor traduir-lo com en el primer cas, posant la clau externa en la que
+participa de forma "quasi" total, ja que aquesta tindrà relativament pocs
+valors nuls, i seria més costós mantenir una altra taula. Evidentment la
+clau externa sí que podria ser nula, en aquest cas.</p>
+</blockquote>
+<p>Resumint, <strong>una relació 1:1 quasi sempre la traduirem com una clau externa en
+la taula que participa en la relació de forma total o quasi total</strong> (o la que
+previsiblement té més ocurrències en la relació)</p>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 3.0</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../43_relacions_mn/" class="btn btn-neutral float-left" title="4.3 Relacions M:N"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../45_entitats_dbils/" class="btn btn-neutral float-right" title="4.5 Entitats dèbils">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../43_relacions_mn/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../45_entitats_dbils/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

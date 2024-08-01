@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://asalvadorc.github.io/BBDD_Tema3/BD-T03_Model_Relacional/2_estructura_del_model_relacional/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>2. Estructura del Model Relacional - BD - Bases de Dades</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2. Estructura del Model Relacional";
+        var mkdocs_page_input_path = "BD-T03_Model_Relacional/2_estructura_del_model_relacional.md";
+        var mkdocs_page_url = "/BBDD_Tema3/BD-T03_Model_Relacional/2_estructura_del_model_relacional/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logocaminas.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Tema 3 Model Relacional</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../objectius_i_coneixements_previs/">Objectius i coneixements previs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../1_introducci/">1. Introducció</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">2. Estructura del Model Relacional</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >3. Restriccions</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../3_restriccions/">3. Restriccions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../31_restriccions_inherents/">3.1 Restriccions inherents</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >3.2 Restriccions d'usuari</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../32_restriccions_dusuari/">3.2 Restriccions d'usuari</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../321_restricci_de_domini/">3.2.1 Restricció de domini</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../322_restricci_de_clau_principal/">3.2.2 Restricció de clau principal</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../323_restricci_dunicitat/">3.2.3 Restricció d'unicitat</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../324_restricci_de_valor_no_nul/">3.2.4 Restricció de valor no nul</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../325_integritat_referencial/">3.2.5 Integritat referencial</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../326_restriccions_externes/">3.2.6 Restriccions externes</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >4. Tranformació del M. E/R al M. Relacional</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../4_tranformaci_del_m_er_al_m_relacional/">4. Tranformació del M. E/R al M. Relacional</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../41_entitats/">4.1 Entitats</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../42_relacions_1n/">4.2 Relacions 1:N</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../43_relacions_mn/">4.3 Relacions M:N</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../44_relacions_11/">4.4 Relacions 1:1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../45_entitats_dbils/">4.5 Entitats dèbils</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../46_resum_dependncies/">4.6 Resum dependències</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../47_relacions_ternries/">4.7 Relacions ternàries</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../48_especialitzacions/">4.8 Especialitzacions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../49_restriccions_externes/">4.9 Restriccions externes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../410_exemple/">4.10 Exemple</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../5_llenguatges_relacionals/">5. Llenguatges relacionals</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../6_exercicis/">6. Exercicis</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">BD - Bases de Dades</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tema 3 Model Relacional</li>
+      <li class="breadcrumb-item active">2. Estructura del Model Relacional</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="2-estructura-del-model-relacional">2. Estructura del Model Relacional</h1>
+<p>L'element basic del Model Relacional es la <strong>RELACI Ó</strong>, que sera una taula o
+matriu bidimensional amb unes caracteristiques o restriccions que comentarem
+mes avant.</p>
+<p><img alt="" src="../T3_2_1_2.png" /></p>
+<p>Normalment una relacio te un <strong>NOM</strong> (p.e. <strong>Empleat</strong>) encara que
+ocasionalment no en tindra, per exemple una taula que siga el resultat d'una
+consulta poc frequent.</p>
+<p>Les <strong>FILES</strong> , on tenim la informacio de les ocurrencies, dels individus,
+tambe s'anomenen <strong>TUPLES</strong> (de vegades per similitud amb fitxers tambe
+s'anomenen <strong>REGISTRES</strong>).</p>
+<p>Les <strong>COLUMNES</strong> , que seran caracteristiques que ens interessen dels
+individus i que en cada tupla agafa un valor, les anomenarem tambe
+<strong>ATRIBUTS</strong> (o <strong>CAMPS</strong>).</p>
+<p>El conjunt de valors possibles que pot agafar un atribut determinat s'anomena
+<strong>DOMINI</strong>. Mes avant veurem que els dominis s'intentaran definir el millor
+possible, per prevenir errors.</p>
+<p>L'<strong>ESQUEMA o ESTRUCTURA DE LA RELACI Ó</strong> es la definicio de la relacio, es a
+dir, atributs que te, dominis d'aquestos i restriccions que podrem definir,
+que veurem en la seguent pregunta.</p>
+<p>L'<strong>ESTAT DE LA RELACI Ó</strong> es la informacio que conte en un determinat moment.
+Normalment l'estat variara continuament al llarg del temps, be perque
+s'afegeixen noves tuples (augmenta la cardinalitat), be perque es modifica el
+valor d'algun atribut en alguna tupla. En canvi l'esquema dificilment
+canviara.</p>
+<p>Una <strong>CLAU CANDIDATA</strong> es un atribut o conjunt d'atributs que identifiquen
+univocament cada tupla de la relacio. En l'exemple podrien ser claus
+candidates <strong>Dni</strong> , <strong>Nom</strong> , fins i tot ens podriem plantejar combinacions,
+com el conjunt <strong>(Nom, Data_n)</strong> , ja que sembla impossible que dues persones
+de l'empresa es diguen igual i damunt hagen nascut el mateix dia. De entre
+totes les claus candidates en triarem una, que sera la <strong>CLAU PRINCIPAL</strong> o
+<strong>CLAU PRIM ÀRIA</strong>, i servira per a identificar de forma efectiva en el Model
+cadascuna de les tuples.</p>
+<p>Podria donar-se el cas que un atribut no agafe cap valor per a una tupla
+determinada, per exemple, un empleat que no tinga telefon. Aleshores li
+donarem el <strong>VALOR NUL</strong>.</p>
+<p>Per ultim, les relacions o taules poden ser <strong>PERMANENTS</strong> o <strong>TEMPORALS</strong>.
+Les primeres es guarden. Les segones, normalment resultat d'una consulta
+ocasional, no.</p>
+<p>Representarem la taula amb el nom de la taula en majuscules seguit, entre
+parentesis, en minuscules i separats per comes, pels noms dels camps, amb la
+clau principal subratllada. Tambe es convenient fugir dels caracters especials
+(vocals accentuades, ç, ñ, guionet, ...) per no tenir problemes quan anem a
+implementar-la en un SGBD determinat (Access, Oracle, PostgreSQL, ...). Per a
+una millor lectura intentarem posar sempre la clau principal al principi, el o
+els primers camps.</p>
+<p>EMPLEAT (dni, nom, adreca, telefon, sou, data_n)</p>
+<p>Tambe podem utilitzar una forma alternativa de representar-la, amb un requadre
+que agafa tota la taula, dalt el nom de la taula, i baix cadascun dels camps,
+posant la clau principal en negreta o subratllada.</p>
+<p><img alt="" src="../T3_2_2.png" /></p>
+<p>Llicenciat sota la  <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Llicència Creative Commons Reconeixement NoComercial
+CompartirIgual 3.0</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../1_introducci/" class="btn btn-neutral float-left" title="1. Introducció"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../3_restriccions/" class="btn btn-neutral float-right" title="3. Restriccions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../1_introducci/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../3_restriccions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
